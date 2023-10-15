@@ -1,11 +1,15 @@
 package com.orlandofrancesco.cameraxjavademo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.security.Permission;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,5 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(scannerNanIntent);
             }
         });
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
     }
 }
